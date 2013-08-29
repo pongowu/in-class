@@ -1,0 +1,15 @@
+/*
+Theme Name: Simplest Theme Ever
+Description: A bare bones theme for learning WP Themeing
+Author: Annette Whitney
+Author URI: http://www.awhitneyaustin.com
+Version: 0.1
+License: GPLv3 or higher
+
+any other comments can go here 
+*/
+
+body {
+	background-color: #8AFFFF;
+	font-family: Helvetica, sans-serif;
+}
