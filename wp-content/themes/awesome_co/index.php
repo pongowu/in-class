@@ -32,11 +32,7 @@
 
             <div class="entry-content">
                 <?php
-                if( is_single() OR is_page() ): // this shows full content or just an exceprt. single is just a post
-                    the_content(); 
-                else:
-                    the_excerpt(); // filter this eventually
-                endif;
+                awesome_content();
                 ?>
             </div>
        

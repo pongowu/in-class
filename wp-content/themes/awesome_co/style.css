@@ -106,6 +106,7 @@ footer#colophon {
 #content .hentry {
 	margin:0 0 0 47px;
 	padding-top:40px;
+	word-wrap:break-word;
 }
 header #searchform {
 	position:absolute;
@@ -564,7 +565,7 @@ footer#colophon .widget ul li {
 	margin:0;
 }
 .home #sidebar .widget {
-	width:248px;
+	width:33.3%;
 	float:left;
 	margin:0;
 	padding:0;
@@ -665,7 +666,7 @@ footer#colophon .widget ul li {
 .hentry img {
 	border:solid 1px #dedede;
 	padding:4px;
-	margin:10px 20px;
+
 	background-color:#FFF;
 }
 .hentry .alignleft {
@@ -697,20 +698,24 @@ footer#colophon .widget ul li {
 	margin:0 0 10px 0;
 }
 .onethird {
-	width:33%;
+	width:29.3%;
 	float:left;
+	margin-right:4%;
 }
 .twothirds {
-	width:66%;
+	width:62%;
 	float:left;
+	margin-right:4%;
 }
 .onehalf {
-	width:50%;
+	width:46%;
 	float:left;
+	margin-right:4%;
 }
 .onequarter {
-	width:25%;
+	width:23%;
 	float:left;
+	margin-right:2%;
 }
 .threequarters {
 	width:75%;
@@ -719,12 +724,14 @@ footer#colophon .widget ul li {
 .entry-content{
 	margin-left:132px;	
 }
-
-.home .entry-content {
-	margin: 0 47px 0 0;
+.page .entry-content, 
+.single .entry-content{
+	margin:0;
 }
-
-
+.page-template-template-no-sidebar-php .entry-content,
+.home .entry-content{
+	margin-right:40px;
+}
 .postmeta{
 	width:120px;
 	float:left;
@@ -820,7 +827,7 @@ body.single  .hentry {
 	text-decoration:none;
 	font-size:.75em; /* 12 px */
 }
-img {
+img, .hentry div {
 	max-width:100%;
 	height:auto;
 }
@@ -832,6 +839,17 @@ img {
 /*
 	 ==Custom Post formats 
 */
+
+/* 
+	==Gallery
+*/
+.format-gallery .entry-content {
+	background-color: #999;
+	padding: 1em;
+}	
+
+
+
 /* 
 	==QUOTE 
 */
@@ -1056,4 +1074,47 @@ sup {
 }
 sub {
 	vertical-align:sub;
+}
+/*
+RSS Feed Image 
+ */
+.page-template-template-sitemap-php #content img{
+	margin:0;
+	padding:0;
+	border:none;
+	display:inline;
+	background: transparent;
+	vertical-align: bottom;
+}
+
+/*
+== Calendar Widget
+*/
+.widget_calendar #wp-calendar {
+	color: #555;
+	width: 100%;
+	text-align: center;
+	font-size:.7em;
+}
+.widget_calendar #wp-calendar caption,
+.widget_calendar #wp-calendar td,
+.widget_calendar #wp-calendar th {
+	text-align: center;
+}
+.widget_calendar #wp-calendar caption {
+	font-size: 11px;
+	font-weight: 500;
+	padding: 5px 0 3px 0;
+	text-transform: uppercase;
+}
+.widget_calendar #wp-calendar th {
+	background: #f4f4f4;
+	border-top: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+	font-weight: bold;
+}
+.widget_calendar #wp-calendar tfoot td {
+	background: #f4f4f4;
+	border-top: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
 }

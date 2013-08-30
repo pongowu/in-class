@@ -1,0 +1,261 @@
+/* 
+== meyer reset
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	  margin: 0;
+	  padding: 0;
+	  border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* 
+== begin editor styles
+*/
+
+@import url(http://fonts.googleapis.com/css?family=Droid+Serif:400,400italic,700,700italic);
+
+body {
+	font-size:100%;
+	line-height:1.125em; /* 16×1.125=18 */
+	font-family:"Droid Serif", Georgia, "Times New Roman", Times, serif;
+	color:#333;
+	padding: 1em;
+}
+/* 
+==Basic Links/hovers
+*/
+a {
+	color:#679EA5;
+	text-decoration:none;
+}
+a:hover,
+a:focus {
+	color:#39C;
+	background-color:#EEE;
+}
+
+h1 {
+	font-size:1.625em; /* 26px */
+	margin:0;
+	padding:0;
+	color:#505050;
+}
+h2 {
+	color:#8e8e8e;
+	font-size:1.375em; /* 22 px */
+	font-style:italic;
+	margin-bottom:.75em /* 12px */;
+	line-height:26px;
+}
+h3 {
+	color:#aeadad;
+	font-size:1em; /* 16px */
+	text-transform:uppercase;
+}
+h4 {
+	color:#505050;
+	font-size:.875em;  /* 14px */
+}
+h5 {
+	color:#8e8e8e;
+	font-style:italic;
+	font-weight:bold;
+	font-size:.75em;  /* 12px */
+}
+h6 {
+	color:#8e8e8e;
+	font-family:Arial, Helvetica, sans-serif;
+	text-transform:uppercase;
+	font-size:.625em;  /* 10px */
+}
+
+p {
+	font-size:.875em; /* 14 px */
+	margin: 10px 0;
+}
+img {
+	border:solid 1px #dedede;
+	padding:4px;
+	margin:10px 20px;
+	background-color:#FFF;
+}
+.alignleft {
+	float:left;
+	margin-left:0px;
+}
+.alignright {
+	float:right;
+	margin-right:0px;
+}
+.aligncenter {
+	margin:0 auto;
+	display:block;
+}
+.alignnone {
+	margin:0;
+}
+.wp-caption {
+	text-align:center;
+	background-color:#EEE;
+	padding:10px;
+	margin:10px;
+}
+.wp-caption-text {
+	font-style:italic;
+	color:#999;
+}
+.wp-caption img {
+	margin:0 0 10px 0;
+}
+.onethird {
+	width:33%;
+	float:left;
+}
+.twothirds {
+	width:66%;
+	float:left;
+}
+.onehalf {
+	width:50%;
+	float:left;
+}
+.onequarter {
+	width:25%;
+	float:left;
+}
+.threequarters {
+	width:75%;
+	float:left;
+}
+
+/*
+==tables
+*/
+table {
+	background-color:#EEE;
+	width:100%;
+	margin-bottom:15px;
+}
+th {
+	background-color:#CFCFCF;
+	text-transform:uppercase;
+	font-size:.875em;
+	text-align:left;
+	color:white;
+}
+td,
+th {
+	padding:6px;
+	border-bottom:	solid 1px #DEDEDE;
+	border-right:	solid 1px #DEDEDE;
+}
+/*
+==Lists
+*/
+dt {
+	font-weight:bold;
+	font-style:italic;
+	margin-top:10px;
+}
+.gallery dt {
+	font-weight:normal;
+	font-style:normal;
+	margin-top:0;
+}
+label:after {
+	content: ":";
+}
+ol,
+ul {
+	margin:10px 0;
+}
+ul {
+	margin-left:10px;
+}
+ol {
+	list-style-type:decimal;
+	margin-left:16px;
+	list-style-position:inside;
+}
+ol ol {
+	list-style-type:lower-alpha;
+}
+ol ol ol {
+	list-style-type:lower-roman;
+}
+ul li {
+	background-image:url(images/bullet_standard.png);
+	padding-left:16px;
+	background-repeat:no-repeat;
+	background-position:0 4px
+}
+abbr,
+acronym {
+	border-bottom:dotted 1px #CCC;
+}
+code,
+pre,
+kbd,
+tt,
+var {
+	font-family:"Courier New", Courier, monospace;
+}
+s {
+	text-decoration:line-through;
+}
+b,
+strong {
+	font-weight:bold;
+}
+i,
+em {
+	font-style:italic;
+}
+q:before,
+q:after {
+	content:'"'
+}
+sup {
+	vertical-align:super;
+}
+sub {
+	vertical-align:sub;
+}
