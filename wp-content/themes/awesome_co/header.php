@@ -33,15 +33,16 @@ wp_head();  ?>
 		
 		<?php get_search_form(); ?>
 		
-		<ul class="utilities">
-		   <?php wp_list_pages('title_li=&include=2,146'); ?>
-		</ul>
+		<?php wp_nav_menu( array( 
+			'theme_location' => 'utility_menu',
+			'container' => 'false', // false makes it not wrap any tags around it
+			'menu_class' => 'utilities', // add the css class
+		 ) ); ?>
 		
-		<nav>
-		  <ul>
-			 <?php wp_list_pages('title_li=&exclude=2,146'); ?>
-		  </ul>
-		</nav>
+		<?php wp_nav_menu( array( 
+			'theme_location' => 'main_menu',
+			'container' => 'nav', // the theme location is the area you made in admin, and container lets you set what html tag you need.	
+		 ) ); ?>
 	</header>    <!-- end header -->
 
 	<?php 
@@ -52,3 +53,10 @@ wp_head();  ?>
 		the_post_thumbnail( 'awesome-interior-banner' );
 	endif;
 	?>
+
+	<?php 
+	// breadcrumbs
+	if('dimox_breadcrumbs()'){
+		dimox_breadcrumbs();
+	}
+	 ?>

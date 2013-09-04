@@ -4,6 +4,12 @@
     <div class="widget-container">        
         &copy; 2013 <?php bloginfo('name'); ?>        
     </div>
+    
+    <?php wp_nav_menu( array( 
+			'theme_location' => 'footer_menu',
+			'container' => 'nav', // the theme location is the area you made in admin, and container lets you set what html tag you need.	
+		 ) ); ?>
+	 
 </footer><!-- end footer -->
 
 <?php 

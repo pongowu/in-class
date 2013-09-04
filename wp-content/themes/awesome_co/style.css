@@ -16,6 +16,7 @@ License URI: license.txt
 2. ==Layout Blocks
 3. ==CSS3 round corner/shadow enhancement
 4. ==Navigation
+5. ==Footer
 5. ==Utilities Menu
 6. ==Pagination
 7. ==Search Form
@@ -257,6 +258,17 @@ header nav ul li .children li a  {
 .utilities .facebook a {
 	background-image:url(images/icon_fb.png);
 }
+
+/*	
+	==footer nav
+*/
+
+#menu-footer li{
+	display: inline;
+	padding-left: 10px;
+}
+
+
 /*
 	==pagination
 */

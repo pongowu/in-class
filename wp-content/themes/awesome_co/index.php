@@ -49,8 +49,16 @@
 	          
         
         <div id="nav-below" class="pagination"> 
-        	<?php //TODO: Make pagination functional ?>
-            <a href="/blog/page/2/" >&larr; View Older Posts</a> 
+            <?php 
+            // use the pagenavi plugin only if it exists (plugin is installed and active)
+            if(function_exists('wp_pagenavi')){
+                wp_pagenavi();
+            } else {
+             ?>
+        	<?php next_posts_link('&laquo; Older Posts'); ?>
+            <?php previous_posts_link('Newer Posts &raquo;'); ?>
+             <?php } ?>
+
         </div><!-- end #nav-below --> 
         
     </div><!-- end content -->
