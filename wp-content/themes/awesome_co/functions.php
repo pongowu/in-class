@@ -65,9 +65,112 @@ function awesome_menu_areas(){
 	register_nav_menus( array('main_menu' => 'Top Navigation Bar', 'utility_menu' => 'Utility Area', 'footer_menu' => 'Footer Menu Area',) );
 } // even if you only have one menu, you still have to set it as an array. This sets up the registration of the menu area in the admin panel.
 
+/**
+* add widget support. create 4 widget areas
+*/
+
+ add_action('widgets_init', 'awesome_sidebars');
+ function awesome_sidebars(){
+ 	register_sidebar( array(
+ 		'name' => 'Blog Sidebar',
+ 		'id' => 'blog-sidebar',
+ 		'description' => 'This appears beside all blog and archive views',
+ 		'before_widget' => '<section id="%1$s" class="widget %2$s clearfix">',
+ 		'after_widget' => '</section>',
+ 		'before_title' => '<h3 class="widget-title">',
+ 		'after_title' => '</h3>',
+ 		) );
+
+ 	register_sidebar( array(
+ 		'name' => 'Home Area',
+ 		'id' => 'home-area',
+ 		'description' => 'This appears near the bottom of the home page, after the content',
+ 		'before_widget' => '<section id="%1$s" class="widget %2$s clearfix">',
+ 		'after_widget' => '</section>',
+ 		'before_title' => '<h3 class="widget-title">',
+ 		'after_title' => '</h3>',
+ 		) );
+
+ 	register_sidebar( array(
+ 		'name' => 'Page Sidebar',
+ 		'id' => 'page-sidebar',
+ 		'description' => 'This appears beside all static pages',
+ 		'before_widget' => '<section id="%1$s" class="widget %2$s clearfix">',
+ 		'after_widget' => '</section>',
+ 		'before_title' => '<h3 class="widget-title">',
+ 		'after_title' => '</h3>',
+ 		) );
+
+ 	register_sidebar( array(
+ 		'name' => 'Footer Area',
+ 		'id' => 'footer-area',
+ 		'description' => 'This appears at the bottom of every view',
+ 		'before_widget' => '<section id="%1$s" class="widget %2$s clearfix">',
+ 		'after_widget' => '</section>',
+ 		'before_title' => '<h3 class="widget-title">',
+ 		'after_title' => '</h3>',
+ 		) );
+ }
 
 /**
- * Dimox Breadcrumbs
+* the callback for adding html to the comments (in comments_template.php). snippet in Codex
+*/
+function awesome_comment_callback($comment, $args, $depth) {
+		$GLOBALS['comment'] = $comment;
+		extract($args, EXTR_SKIP);
+
+		if ( 'div' == $args['style'] ) {
+			$tag = 'div';
+			$add_below = 'comment';
+		} else {
+			$tag = 'li';
+			$add_below = 'div-comment';
+		}
+?>
+		<<?php echo $tag ?> <?php comment_class(empty( $args['has_children'] ) ? '' : 'parent') ?> id="comment-<?php comment_ID() ?>">
+		<?php if ( 'div' != $args['style'] ) : ?>
+		<div id="div-comment-<?php comment_ID() ?>" class="comment-body">
+		<?php endif; ?>
+
+		<?php // EDIT BELOW THIS POINT ?>
+		<div class="comment-author vcard">
+			<?php if ($args['avatar_size'] != 0) echo get_avatar( $comment, $args['avatar_size'] ); ?>
+			<span class="fn"><?php comment_author_link(); ?></span>
+		</div>
+
+<?php if ($comment->comment_approved == '0') : ?>
+		<em class="comment-awaiting-moderation"><?php _e('Your comment is awaiting moderation.') ?></em>
+		<br />
+<?php endif; ?>
+
+		<?php comment_text() ?>
+
+		<div class="comment-meta commentmetadata">
+			<span class="comment-date"><?php comment_date('F j, Y'); ?></span>
+			<span class="comment-link"><a href="<?php comment_link(); ?>">Link</a></span>
+			<span class="edit-comment"><?php edit_comment_link(); ?></span>
+
+
+
+			<div class="reply">
+			<?php comment_reply_link(array_merge( $args, array('add_below' => $add_below, 'depth' => 
+			$depth, 'max_depth' => $args['max_depth']))) ?>
+			</div>
+		</div>	<!-- comment-meta -->	
+
+		
+			<?php if ( 'div' != $args['style'] ) : ?>
+		</div>
+			<?php endif; ?>
+<?php
+        }
+
+
+
+
+
+
+ /* Dimox Breadcrumbs
  * http://dimox.net/wordpress-breadcrumbs-without-a-plugin/
  * Since ver 1.0
  * Add this to any template file by calling dimox_breadcrumbs()

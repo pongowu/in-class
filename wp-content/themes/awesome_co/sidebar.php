@@ -1,4 +1,8 @@
  <aside id="sidebar">
+    <?php if( !dynamic_sidebar('blog-sidebar') ): 
+        // the HTML that follows is the fallback content in case the dynamic sidebar fails
+    ?>
+
         <section id="categories" class="widget">
             <h3 class="widget-title"> Categories </h3>
             <ul>
@@ -32,4 +36,5 @@
                 <li> <?php wp_login_form(); ?> </li>
             </ul>
         </section>
+    <?php endif; // dynamic sidebar ?>
   </aside><!-- end sidebar --> 

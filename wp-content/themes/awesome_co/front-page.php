@@ -28,5 +28,6 @@
               
     </div><!-- end content -->
     
-<?php get_sidebar(); ?> 
+<?php // include sidebar-home.php
+get_sidebar('home'); ?> 
 <?php get_footer(); ?>  

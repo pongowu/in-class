@@ -1,6 +1,9 @@
 </div><!-- end wrapper -->
 
 <footer class="clearfix" id="colophon" role="contentinfo">
+
+	<?php dynamic_sidebar('footer-area'); // this is a widget area ?>
+
     <div class="widget-container">        
         &copy; 2013 <?php bloginfo('name'); ?>        
     </div>

@@ -506,7 +506,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c2c2c2', end
 	padding-left:20px;
 	background-image:url(images/bullet_standard.png);
 	background-repeat:no-repeat;
-	background-position:0 6px;
+	background-position:3px 5px;
 	margin-bottom:5px;
 	font-size:.875em; /* 14 px */
 }
