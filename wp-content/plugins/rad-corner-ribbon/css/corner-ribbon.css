@@ -1,0 +1,14 @@
+#rad-corner-ribbon{
+	position:fixed;
+	top:0;
+	right:0;
+	background-color: transparent;
+	width: auto;
+	height: auto;
+	margin:0;
+	padding:0;
+	border:none;
+	}
+.admin-bar #rad-corner-ribbon{
+	top:27px;
+}
