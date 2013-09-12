@@ -49,7 +49,7 @@ wp_head();  ?>
 	// show a large featured image on top of the front page, and a shorter banner on all other views
 	if( is_front_page() ):
 		the_post_thumbnail( 'awesome-home-banner' );
-	else: 
+	elseif(is_singular() AND 'product' != get_post_type() ): 
 		the_post_thumbnail( 'awesome-interior-banner' );
 	endif;
 	?>
