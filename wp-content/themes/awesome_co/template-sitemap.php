@@ -46,9 +46,11 @@ will automatically generate a sitemap using all pages, posts, and categories on 
                 	</ul>
                 	<h3>Blog Categories:</h3>
                 	<ul>
-                	<?php wp_list_categories( array(
+                	<?php 
+                        $path = get_template_directory_uri();
+                    wp_list_categories( array(
                 		'title_li' => '', // instead of an image for the feed, use the 'feed' => 'rss'
-                		'feed_image' => get_bloginfo( 'template_directory' ) . '/images/icon_feed.png', // the bloginfo echos, so using get_bloginfo doesn't	
+                		'feed_image' => $path . '/images/icon_feed.png', // the bloginfo echos, so using get_bloginfo doesn't	
                 	) );?>	
                 	</ul>	
                 </div>

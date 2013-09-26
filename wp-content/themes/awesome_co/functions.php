@@ -1,5 +1,9 @@
 <?php 
 // don't close this PHP. this page only contains php & runs before the header.php starts
+
+if ( ! isset( $content_width ) ) $content_width = 700;
+add_theme_support( 'automatic-feed-links' );
+
 // activate post featured images
 
 add_theme_support('post-thumbnails'); // adds image to the page
@@ -139,7 +143,7 @@ function awesome_comment_callback($comment, $args, $depth) {
 		</div>
 
 <?php if ($comment->comment_approved == '0') : ?>
-		<em class="comment-awaiting-moderation"><?php _e('Your comment is awaiting moderation.') ?></em>
+		<em class="comment-awaiting-moderation"><?php echo 'Your comment is awaiting moderation.' ?></em>
 		<br />
 <?php endif; ?>
 
@@ -194,7 +198,7 @@ function dimox_breadcrumbs(){
 	/* === END OF OPTIONS === */
 
 	global $post;
-	$homeLink = get_bloginfo('url') . '/';
+	$homeLink = home_url('/');
 	$linkBefore = '<span typeof="v:Breadcrumb">';
 	$linkAfter = '</span>';
 	$linkAttr = ' rel="v:url" property="v:title"';
@@ -306,7 +310,7 @@ function dimox_breadcrumbs(){
 
 		if ( get_query_var('paged') ) {
 			if ( is_category() || is_day() || is_month() || is_year() || is_search() || is_tag() || is_author() ) echo ' (';
-			echo __('Page') . ' ' . get_query_var('paged');
+			echo 'Page' . ' ' . get_query_var('paged');
 			if ( is_category() || is_day() || is_month() || is_year() || is_search() || is_tag() || is_author() ) echo ')';
 		}
 

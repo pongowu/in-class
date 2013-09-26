@@ -1,0 +1,10 @@
+.login h1 a{
+	background-image:url('images/logo.png'); 
+	background-size: auto;
+}
+body.login{
+	background-color: #FEB4F3;
+}
+.login form{
+	border:2px dashed #FF0000;
+}

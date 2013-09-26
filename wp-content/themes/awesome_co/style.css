@@ -5,7 +5,7 @@ Description: A barebones theme for learning!
 Author: melissa cabral
 Author URI: http://melissacabral.com
 Version: 1.0
-
+Tags: white, light, two-columns, fixed-width, custom-background, custom-menu, editor-style, featured-images, full-width-template, sticky-post, threaded-comments
 License: GPLv2 
 License URI: license.txt
 
@@ -214,6 +214,10 @@ header nav ul li .children li  {
 header nav ul li .sub-menu li a
 header nav ul li .children li a  {
 	padding:10px 25px;
+}
+
+.phone {
+	font-size: 10px;
 }
 /* 
 	==utilities (top) 

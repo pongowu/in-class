@@ -1,0 +1,57 @@
+/*
+stylesheet for recent posts plugin with thumbnails
+*/
+.latest-news-widget img {
+	width:94px;
+	height:70px;
+	padding:4px;
+	border:solid 1px #dedede;
+	margin:0 ;
+	margin-bottom:10px;
+}
+ 
+.latest-news-widget .readmore {
+	display:none;
+}
+.latest-news-widget p {
+	font-size:.75em;
+	font-style:italic;
+	margin:0 0 20px 104px;
+}
+.latest-news-widget ul{
+		list-style-type:none;
+	margin:0 !important;
+	padding:0 !important;
+}
+.latest-news-widget li{
+	clear:both;
+	list-style-type:none;
+	margin:0 !important;
+	padding:0 !important;
+	background-image:none !important;
+}
+.latest-news-widget a.thumbnail-link{
+	display:block;
+	position:relative;
+	float:left;
+	margin-right:10px;
+	clear:both;
+ 
+}
+.zoom{
+	display:none;
+	border:none !important;
+	background-color:rgba(0,0,0,.3);
+	background-image:url(images/zoom.png);
+	background-repeat:no-repeat;
+	background-position: center center;
+	position:absolute;
+	top:0px;
+	left:0px;
+	height:80px;
+	width:104px;
+}
+a.thumbnail-link:hover .zoom{
+	display:block;
+ 
+}

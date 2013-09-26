@@ -6,14 +6,14 @@
 
 <title><?php bloginfo('name'); ?> - <?php bloginfo('description'); ?></title>
 
-<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_directory' ); ?>/styles/reset.css" />
+<link rel="stylesheet" type="text/css" media="all" href="<?php echo get_stylesheet_directory_uri(); ?>/styles/reset.css" />
 
 <?php 
 //Necessary in <head> for JS and plugins to work. 
 //I like it before style.css loads so the theme stylesheet is more specific than all others.
 wp_head();  ?>
 
-<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
+<link rel="stylesheet" type="text/css" media="all" href="<?php echo get_stylesheet_uri(); ?>" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 
 <!-- HTML5 shiv -->
@@ -32,6 +32,11 @@ wp_head();  ?>
 		<h2 class="site-description"> <?php bloginfo('description'); ?> </h2>
 		
 		<?php get_search_form(); ?>
+
+		<?php //display the phone number from the options plugin
+			$values = get_option('rad_options');
+			echo '<span class="phone">' . $values['phone'] . '</span>';
+		 ?>
 		
 		<?php wp_nav_menu( array( 
 			'theme_location' => 'utility_menu',
